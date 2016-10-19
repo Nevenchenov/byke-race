@@ -1,5 +1,5 @@
 # byke-race-multiple
 My first game in Java to excersise disigning objects and building interacting of them
 
-By the second step I've created a possibility for a few members to take part in the race. I've introduced byker.time var to calculate the step passing time. Time is accumulated  with each next step. In the branch I put var "time" into Byker because it was calculated whole for all bykers in Race.
-Lets move farther to multiple version.
+By the second step I've created a possibility for a few members to take part in the race.  In the branch I return var "time" into Race and it is refresh in Map in Referee by each step.
+Lets move farther to rank racers while end of Lap is reached.
