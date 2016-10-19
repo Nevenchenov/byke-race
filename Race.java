@@ -58,6 +58,6 @@ public class Race {
         }
         reader.close();
         // rank should used here
-        System.out.println("Congratulations!!! You reach the finish!");
+        System.out.println("\nCongratulations!!! You reach the finish!\n");
     }
 }

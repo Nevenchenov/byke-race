@@ -19,6 +19,8 @@ public class Main {
 
         Race.RunLap(road);
 
+        Referee.rank();
+
 
 
 

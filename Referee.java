@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Created by Rain on 04-Oct-16.
@@ -15,8 +16,10 @@ public class Referee {
 
 // list of participants. Accommodative to use in calculations where Map isn't needed
     protected static ArrayList<Byker> racers = new ArrayList<>();
+    public static TreeMap<Double, Byker> listSorted = new TreeMap<Double, Byker>();
 
-    public static ArrayList<Byker> register() throws IOException {
+
+    public static synchronized ArrayList<Byker> register() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter racers names. One name in one line. To stop input enter 'stop':");
         while(true)
@@ -64,10 +67,20 @@ public class Referee {
         else return true;
 
     }
-    public int rank(double time, Byker racer)
+    public static synchronized void rank()
     {
-        int rank = 1;
-        return rank;
+
+        for (Map.Entry<Byker, Double> entry : list.entrySet())
+        {
+            listSorted.put(entry.getValue(), entry.getKey());
+
+        }
+        int Range = 1;
+        for (Map.Entry<Double, Byker> entry : listSorted.entrySet())
+        {
+            System.out.println(Range + " is " + entry.getValue().name + " with time score" + entry.getKey());
+            Range++;
+        }
 
     }
 }
