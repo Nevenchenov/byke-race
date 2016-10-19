@@ -7,7 +7,7 @@ public class Byker {
     public String name;
     public Short range;
     public Byke byke;
-    public double time = 0;
+
     protected boolean isRun = true;
 
     public Byker(String name)

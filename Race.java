@@ -12,7 +12,7 @@ public class Race {
 
         int step = 0;
         int speed = 0;
-
+        double time = 0;
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int inputSpeed = 0;
@@ -39,18 +39,18 @@ public class Race {
                     speed = byker.byke.getSpeed(inputSpeed, track[step]);
                     if (!Referee.isRetired(byker)) {
 
-                        byker.time = byker.time + 1.0/speed;
+                        time = Referee.list.get(byker) + 1.0/speed;
                             System.out.println(byker.name + "! Your speed is: " + speed);
-                            System.out.println(byker.name + "! Your time score is: " + byker.time);
+                            System.out.println(byker.name + "! Your time score is: " + time);
 
 
                     }
                 }
                 else
                 {
-                    byker.time += 1.0;
+                    time += 1.0;
                 }
-                Referee.list.put(byker, Referee.list.get(byker) + byker.time);
+                Referee.list.put(byker, time);
 
             }
                 step++;
